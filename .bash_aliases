@@ -26,12 +26,30 @@ function gcp {
 
 alias gpm='git checkout master && git pull'
 
+
+
+####################
+# Command prompt
+
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-####################
-# Prompt command
+PROMPT_COMMAND=__prompt_command # Func to gen PS1 after CMDs
 
-# Prompt command
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\n\[\033[01;34m\][$?]\n\[\033[00m\]> '
+__prompt_command() {
+    local EXIT="$?"             # This needs to be first
+    local GIT_BRANCH=$(parse_git_branch)
+
+    PS1=""
+
+    local RCol='\[\e[0m\]'
+    local Red='\[\e[0;31m\]'
+    local Gre='\[\e[0;32m\]'
+    local BYel='\[\e[1;33m\]'
+    local BBlu='\[\e[1;34m\]'
+    local Pur='\[\e[0;35m\]'
+
+    PS1+="${Gre}\u${Gre}${Gre}@${Gre}\h${Red}:${BBlu}\w${Red}${GIT_BRANCH}\n${BBlu}${EXIT}${RCol} > "
+}
+
