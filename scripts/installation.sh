@@ -77,6 +77,7 @@ sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 sudo apt-get update
 sudo apt -y install docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker ${USER}
 
 printf "\n\n===================================="
 printf " Installing Postman "
