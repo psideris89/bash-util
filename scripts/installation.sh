@@ -10,7 +10,7 @@ sudo apt upgrade
 printf "\n\n===================================="
 printf " Installing Vim 8 "
 printf "=====================================\n"
-sudo apt install vim
+sudo apt -y install vim
 
 printf "\n\n===================================="
 printf " Installing Curl "
@@ -82,7 +82,7 @@ sudo usermod -aG docker ${USER}
 printf "\n\n===================================="
 printf " Installing Postman "
 printf "=====================================\n"
-snap install postman
+sudo snap install postman
 
 printf "\n\n===================================="
 printf " Installing Slack "
@@ -93,6 +93,6 @@ sudo apt -y install "$HOME/Downloads/slack-desktop-4.4.2-amd64.deb"
 printf "\n\n===================================="
 printf " Installing Spotify "
 printf "=====================================\n"
-snap install spotify
+sudo snap install spotify
 
 printf "\n\n"
