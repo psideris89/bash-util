@@ -53,3 +53,20 @@ __prompt_command() {
     PS1+="${Gre}\u${Gre}${Gre}@${Gre}\h${Red}:${BBlu}\w${Red}${GIT_BRANCH}\n${BBlu}${EXIT}${RCol} > "
 }
 
+# Alias
+alias postman=/opt/Postman/app/Postman
+alias ga="git add"
+alias gaa="git add ."
+alias gb="git branch"
+alias gbd="git branch -d"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gd="git diff"
+alias gl="git log"
+alias gll="git log -1 HEAD"
+alias gp="git pull"
+alias gpm="git pull origin master"
+alias gs="git status"
+alias gsh="git stash"
+
