@@ -67,6 +67,7 @@ alias gl="git log"
 alias gll="git log -1 HEAD"
 alias gp="git pull"
 alias gpm="git pull origin master"
+alias gps="git push"
 alias gs="git status"
 alias gsh="git stash"
 
